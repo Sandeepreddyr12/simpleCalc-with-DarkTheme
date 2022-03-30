@@ -1,0 +1,180 @@
+body{
+    background-color: var(--bg);
+    color: var(--txt);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+header{
+    text-align: center;
+    padding: 1em;
+    background-color: var(--bg-header);
+    margin-bottom: 1em;
+    padding-bottom: 3.5em;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 65%, 50% 100%, 0 65%, 0 0);
+}
+
+.theme{
+   float: right;
+}
+
+.toggle{
+    height: 30px;
+    width: 55px;
+    background-color: rebeccapurple;
+    border-radius: 30px;
+    transform: translateX(40%);
+    transition: all 300ms ease-in-out;
+}
+
+.toggler{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 4px 2px;
+    transition: all 300ms ease-in-out;
+}
+
+.toggle.active{
+    background: skyblue;
+    transition: all 300ms ease-in-out;
+}
+
+.toggle.active > .toggler{
+    margin-left: 28px;
+}
+
+.body1{
+    display: grid;
+    width: 330px;
+    height: 550px;
+    margin: 20px auto;
+    position: relative;
+    border: solid 2px var(--bordercolor);
+    border-radius: 20px;
+    background: var(--cbg);
+}
+.output{
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.history{
+    height: 25px;
+    position: relative;
+    text-align: right;
+    margin: 0 20px;
+    font-size : 20px;
+    font-weight: bold;
+    color: rgb(27, 196, 226);
+}
+.result{
+    height: 55px;
+    position: relative;
+    text-align: right;
+    margin: 0 20px;
+    font-size : 30px;
+    font-weight: bold;
+
+}
+
+.operators, .numbers, .none{ 
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+.operators, .numbers{
+    cursor: pointer;
+}
+
+.operators:active, .numbers:active{
+    font-size: 13px;
+}
+.operators:focus, .numbers:focus, .none:focus{
+    outline: 0em;
+}
+button:nth-child(1):hover{
+    color: rgb(255, 0, 0);
+}
+button:nth-child(2){
+    background-color: rgb(19, 143, 214);
+}
+button:nth-child(3){
+    background-color: rgb(61, 224, 75);
+}
+button:nth-child(4):hover{
+    color: white;
+    background-color:rgb(114, 202, 240);
+}
+button:nth-child(8){
+    background-color: rgb(113, 104, 236);
+}
+button:nth-child(12){
+    background-color: rgb(235, 36, 63);
+}
+button:nth-child(16){
+    background-color: rgb(223, 241, 53);
+}
+button:nth-child(17){
+    background-color: rgb(161, 248, 90);
+}
+button:nth-child(19){
+    width: 130px;
+    border-radius:0;
+    margin: 15px, 0;
+    color: white;
+    background-color: rgb(50, 50, 241);
+}
+
+:root{
+    --gray0: #f8f8f8;
+    --gray1: #dbe1e8;
+    --gray2: #b2becd;
+    --gray3: #6c7983;
+    --gray4: #454e56;
+    --gray5: #2a2e35;
+    --gray6: #12181b;
+    --blue: #0084a5;
+    --purple: #a82dd1;
+    --yellow: #fff565;
+    --red:    red;
+}
+
+.light{
+    --bg: var(--gray1);
+    --cbg: var(--gray0);
+    --txt: var(--gray6);
+    --bordercolor: var(--blue);
+    --bg-header: var(--red);
+    --themebg: var(--gray6);
+}
+
+.dark{
+    --bg: var(--gray6);
+    --cbg : var(--gray4);
+    --txt: var(--gray1);
+    --bordercolor: var(--purple);
+    --bg-header: rgb(104, 101, 148);
+    --themebg: var(--gray1);
+}
+
+@keyframes color-rotate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+.logo:hover {
+    animation: color-rotate 1s;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate;
+}
